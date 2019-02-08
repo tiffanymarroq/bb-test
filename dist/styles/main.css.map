@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.css"],"names":[],"mappings":"AACA,QACI,YAAY,AACZ,aAAa,AACb,sBAAsB,AACtB,WAAY,CAChB","file":"main.css","sourcesContent":["\r\n.banner{\r\n    width: 300px;\r\n    height: 250px;\r\n    background-color: #333;\r\n    margin: auto;\r\n}"]}
