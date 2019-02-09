@@ -5,16 +5,43 @@
 img{
     width: 100%;
 }
-#banner{
+
+.hide{
+    display: none;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.banner-container{
     position: relative;
     width: 300px;
     height: 250px;
-    text-transform: uppercase;
     margin: auto;
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
+    text-transform: uppercase; 
+    /* padding: 7px; */
+    
+    
 }
+
+/* Main Container */
+#banner{
+    height:100%;
+    width: 100%;
+    background:  no-repeat center; 
+    background-size: 90%;
+    background-color: #000;
+    
+}
+
+/* Text Container */
 .text-container{
     position: relative;
+    top:0;
     padding: 15px;
     z-index: 100;
 }
@@ -32,10 +59,8 @@ img{
     font-size: 28px;
 }
 
-#color-controls{
-    font-size: 14px;
-}
 
+/* Buttons */
 .btn-container{
     position: absolute;
     bottom: 10px;
@@ -48,23 +73,47 @@ img{
     text-transform: uppercase;    
     padding: 7px 2px;
     outline: none;
-    border: 0;
+    border: 1px solide #fff;
     background-color: #000;    
     color: #fff;
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
     
 }
+#color-controls{
+    font-size: 14px;
 
-.color-box{
-    width: 20px;
-    height: 20px;
-    background: #333;
 }
 
+#color-controls .text{
+    margin-right: 10px;
+}
+span.color-box{
+    display: block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid #fff;
+
+}
+
+/* Colors */
+.red{
+    background: #FF0000;
+}
+.blue{
+    background: #0000ff;
+}
+.yellow{
+    background: #FFff00;
+}
+
+/* Image */
 .bg-image{
     position: absolute;
     bottom:15px;
     left: 0;
 }
+
 
 

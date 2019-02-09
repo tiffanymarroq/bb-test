@@ -70,7 +70,6 @@ export function scriptBundle() {
 export function watch() {
     gulp.watch(paths.scripts, scriptBundle);
     gulp.watch(paths.styles, styleBundle);
-    // gulp.watch('*.html', reload);
     
   }
 
