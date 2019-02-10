@@ -30,8 +30,8 @@ function buttonControls(){
     banner.style.backgroundColor = "#000";
     banner.style.backgroundPosition = "50% 72%"
     colorBtn[0].addEventListener("click", function(){
-        banner.style.backgroundImage =  "url('assets/images/red.jpg')";      
-        bgColor = RED;
+        banner.style.backgroundImage =  "url('assets/images/blue.jpg')";      
+        bgColor = BLUE;
         bannerContainer.style.backgroundColor = bgColor;
     });
     colorBtn[1].addEventListener("click", function(){
@@ -40,8 +40,8 @@ function buttonControls(){
         bannerContainer.style.backgroundColor = bgColor;
     });
     colorBtn[2].addEventListener("click", function(){
-        banner.style.backgroundImage =  "url('assets/images/blue.jpg')";      
-        bgColor = BLUE;
+        banner.style.backgroundImage =  "url('assets/images/red.jpg')";      
+        bgColor = RED;
         bannerContainer.style.backgroundColor = bgColor;
     });
     bannerContainer.style.backgroundColor = bgColor;
@@ -51,26 +51,26 @@ function buttonControls(){
 
 function main(){
     defaultFrame();
-    setTimeout(function(){
-        bannerContainer.style.backgroundColor = YELLOW;
-        document.getElementById("small-header").innerHTML = "Small Car";
-        document.getElementById("big-header").innerHTML = "Big Pleasure.";
+    // setTimeout(function(){
+    //     bannerContainer.style.backgroundColor = YELLOW;
+    //     document.getElementById("small-header").innerHTML = "Small Car";
+    //     document.getElementById("big-header").innerHTML = "Big Pleasure.";
         
-    }, 2000)
-    setTimeout(function(){
-        bannerContainer.style.backgroundColor = RED;
-    }, 4000)
-    setTimeout(function(){
-        banner.style.backgroundImage =  "";
-        bannerContainer.style.backgroundColor = BLUE;
-        btnContainer.classList.add("hide")
-        logoFrame.classList.remove("hide")
-        mainText.classList.add("hide");
-    }, 6000)
-    setTimeout(function(){
-        banner.classList.remove("full");
-        banner.classList.add("add-margin")
-        buttonControls()}, 8000);
+    // }, 2000)
+    // setTimeout(function(){
+    //     bannerContainer.style.backgroundColor = RED;
+    // }, 4000)
+    // setTimeout(function(){
+    //     banner.style.backgroundImage =  "";
+    //     bannerContainer.style.backgroundColor = BLUE;
+    //     btnContainer.classList.add("hide")
+    //     logoFrame.classList.remove("hide")
+    //     mainText.classList.add("hide");
+    // }, 6000)
+    // setTimeout(function(){
+    //     banner.classList.remove("full");
+    //     banner.classList.add("add-margin")
+    //     buttonControls()}, 8000);
 
 }
 
