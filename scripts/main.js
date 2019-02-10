@@ -53,6 +53,9 @@ function main(){
     defaultFrame();
     setTimeout(function(){
         bannerContainer.style.backgroundColor = YELLOW;
+        document.getElementById("small-header").innerHTML = "Small Car";
+        document.getElementById("big-header").innerHTML = "Big Pleasure.";
+        
     }, 2000)
     setTimeout(function(){
         bannerContainer.style.backgroundColor = RED;
