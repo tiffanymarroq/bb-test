@@ -16,25 +16,27 @@ img{
     align-items: center;
 }
 
-.banner-container{
+#banner-container{
     position: relative;
     width: 300px;
     height: 250px;
     margin: auto;
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
-    text-transform: uppercase; 
-    /* padding: 7px; */
-    
-    
+    text-transform: uppercase;     
+}
+
+.frame-padding{
+    padding: 7px;
 }
 
 /* Main Container */
 #banner{
     height:100%;
     width: 100%;
-    background:  no-repeat center; 
-    background-size: 90%;
+    background-repeat:  no-repeat; 
+    background-size: 99%;
     background-color: #000;
+    background-position: 50% 72%;
     
 }
 
@@ -94,18 +96,18 @@ span.color-box{
     height: 20px;
     margin-right: 5px;
     border: 1px solid #fff;
-
+    
 }
 
 /* Colors */
 .red{
-    background: #FF0000;
+    background: #A21F1E;
 }
 .blue{
-    background: #0000ff;
+    background: #5DBCD2;
 }
 .yellow{
-    background: #FFff00;
+    background: #F1AB3E;
 }
 
 /* Image */
