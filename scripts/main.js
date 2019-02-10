@@ -9,6 +9,8 @@ var bannerContainer = document.getElementById("banner-container");
 var banner = document.getElementById("banner");
 var colorControls = document.getElementById("color-controls");
 var mainText = document.getElementById("main-text");
+var logoFrame = document.getElementById("logo-frame");
+var btnContainer = document.getElementById("btn-container");
 
 // Main text Animation
 function defaultFrame(){
@@ -21,7 +23,9 @@ function defaultFrame(){
 function buttonControls(){
     var bgColor = BLUE;
     mainText.classList.add("hide");
+    logoFrame.classList.add("hide");
     colorControls.classList.remove("hide");
+    btnContainer.classList.remove("hide")
     banner.style.backgroundImage = "url('assets/images/blue.jpg')";
     banner.style.backgroundColor = "#000";
     banner.style.backgroundPosition = "50% 72%"
@@ -54,7 +58,16 @@ function main(){
         bannerContainer.style.backgroundColor = RED;
     }, 4000)
     setTimeout(function(){
-        buttonControls()}, 6000)
+        banner.style.backgroundImage =  "";
+        bannerContainer.style.backgroundColor = BLUE;
+        btnContainer.classList.add("hide")
+        logoFrame.classList.remove("hide")
+        mainText.classList.add("hide");
+    }, 6000)
+    setTimeout(function(){
+        banner.classList.remove("full");
+        banner.classList.add("add-margin")
+        buttonControls()}, 8000);
 
 }
 

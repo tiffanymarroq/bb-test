@@ -23,20 +23,30 @@ img{
     margin: auto;
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
     text-transform: uppercase; 
+    /* padding: 7px; */
+    
+    
 }
 
 /* Banner */
 #banner{
-    position: relative;
-    height: 100%;
-    width: 100%;
+    height: calc(100% - 14px);
+    width: calc(100% - 14px);
     background-repeat:  no-repeat; 
     background-size: 99%;
+   
     /* background-color: #000; */
     /* background-position: ; */
-    
 }
-
+ .add-margin{
+    position: absolute;    
+    top: 7px;
+    left: 7px; 
+ }
+ .full{
+    height: 100% !important;
+    width: 100% !important;
+}
 /* Text Container */
 .text-container{
     position: relative;
@@ -60,12 +70,12 @@ img{
 
 
 /* Buttons */
-.btn-container{
+#btn-container{
     position: absolute;
     bottom: 10px;
     width: 100%;
 }
-.btn-container button{
+#btn-container button{
     font-size: 14px;
     width: 140px;
     cursor: pointer;
@@ -78,7 +88,7 @@ img{
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
     
 }
-.btn-container .flex{
+#btn-container .flex{
     padding: 0 10px;
     justify-content: space-between;
     
@@ -120,6 +130,22 @@ span.color-box{
 
 .logo{
     width: 65px;
+}
+#logo-frame{
+    height: calc(100% - 14px);
+    width: calc(100% - 14px);
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 7px;
+}
+
+#logo-frame img{
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 
