@@ -4,17 +4,17 @@
   }
 img{
     width: 100%;
+    height: auto;
 }
-
 .hide{
-    display: none;
+    display: none !important;
 }
-
 .flex{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+/* Main Container */
 
 #banner-container{
     position: relative;
@@ -22,28 +22,25 @@ img{
     height: 250px;
     margin: auto;
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
-    text-transform: uppercase;     
+    text-transform: uppercase; 
 }
 
-.frame-padding{
-    padding: 7px;
-}
-
-/* Main Container */
+/* Banner */
 #banner{
-    height:100%;
+    position: relative;
+    height: 100%;
     width: 100%;
     background-repeat:  no-repeat; 
     background-size: 99%;
-    background-color: #000;
-    background-position: 50% 72%;
+    /* background-color: #000; */
+    /* background-position: ; */
     
 }
 
 /* Text Container */
 .text-container{
     position: relative;
-    top:0;
+    /* top:0; */
     padding: 15px;
     z-index: 100;
 }
@@ -66,7 +63,7 @@ img{
 .btn-container{
     position: absolute;
     bottom: 10px;
-    left: 10px;
+    width: 100%;
 }
 .btn-container button{
     font-size: 14px;
@@ -81,9 +78,14 @@ img{
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
     
 }
+.btn-container .flex{
+    padding: 0 10px;
+    justify-content: space-between;
+    
+}
+
 #color-controls{
     font-size: 14px;
-
 }
 
 #color-controls .text{
@@ -96,7 +98,6 @@ span.color-box{
     height: 20px;
     margin-right: 5px;
     border: 1px solid #fff;
-    
 }
 
 /* Colors */
@@ -115,6 +116,10 @@ span.color-box{
     position: absolute;
     bottom:15px;
     left: 0;
+}
+
+.logo{
+    width: 65px;
 }
 
 
