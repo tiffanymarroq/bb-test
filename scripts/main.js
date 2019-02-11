@@ -12,47 +12,60 @@ var mainText = document.getElementById("main-text");
 var logoFrame = document.getElementById("logo-frame");
 var btnContainer = document.getElementById("btn-container");
 
-// Main text Animation
+
 function defaultFrame(){
     banner.style.backgroundImage = "url('assets/images/sideview.png')";
     banner.style.backgroundPosition = "-5px 60px";
-    bannerContainer.style.backgroundColor = BLUE;
+    bannerContainer.style.backgroundColor = BLUE; 
 }
-document.getElementById("btn").onmouseover = function(){
-    TweenLite.to(document.getElementById("btn"), .2, {css:{opacity:.8}});
-    }​
-document.getElementById("btn").onmouseleave = function(){
-    TweenLite.to(document.getElementById("btn"), .2, {css:{opacity:1}});
-    }​
 
-document.getElementById("logo").onmouseover = function(){
-    TweenLite.to(document.getElementById("logo"), .2, {css:{scale: 1.1}});
-    }​
-document.getElementById("logo").onmouseleave = function(){
-    TweenLite.to(document.getElementById("logo"), .2, {css:{scale:1}});
-    }​
+// Animation
+function carAnimation(){
+    banner.style.backgroundImage = "url('assets/images/sideview-spin.png')";
+    TweenLite.fromTo(banner, 1.5, {backgroundPosition: "-20px 60px",ease:Elastic.easeIn}, {backgroundPosition: "300px 60px"});
+}
+
+function selectAnimationEnter(){
+    TweenLite.fromTo(banner, .8, {backgroundPosition: "50% 400%"}, {backgroundPosition: "50% 72%",ease:Back.easeOut.config(.8)});
+}
+
+function btnAnimation(){
+    // Button Hover
+    document.getElementById("btn").onmouseover = function(){
+        TweenLite.to(document.getElementById("btn"), .2, {css:{opacity:.8}});
+        }​
+    document.getElementById("btn").onmouseleave = function(){
+        TweenLite.to(document.getElementById("btn"), .2, {css:{opacity:1}});
+        }​
+    document.getElementById("logo").onmouseover = function(){
+        TweenLite.to(document.getElementById("logo"), .2, {css:{scale: 1.1}});
+        }​
+    document.getElementById("logo").onmouseleave = function(){
+        TweenLite.to(document.getElementById("logo"), .2, {css:{scale:1}});
+        }​
+
+}
+
 
 function addActive(){
-
+    var colorBtns = colorControls.getElementsByClassName("color-box");
+    console.log(btnContainer)
+    console.log(colorBtns.length)
+    for (var i = 0; i < colorBtns.length; i++) {
+        colorBtns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        // If there's no active class
+        if (current.length > 0) { 
+            current[0].className = current[0].className.replace(" active", "");
+            selectAnimationEnter();
+        }
+    
+        // Add the active class to the current/clicked button
+        this.className += " active";
+        });
+    }
 }
 
-
-var colorBtns = colorControls.getElementsByClassName("color-box");
-console.log(btnContainer)
-console.log(colorBtns.length)
-for (var i = 0; i < colorBtns.length; i++) {
-    colorBtns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active");
-  
-      // If there's no active class
-      if (current.length > 0) { 
-        current[0].className = current[0].className.replace(" active", "");
-      }
-  
-      // Add the active class to the current/clicked button
-      this.className += " active";
-    });
-  }
 //Color Controls
 function buttonControls(){
     var bgColor = BLUE;
@@ -62,17 +75,17 @@ function buttonControls(){
     btnContainer.classList.remove("hide")
     banner.style.backgroundImage = "url('assets/images/blue.jpg')";
     banner.style.backgroundColor = "#000";
-    banner.style.backgroundPosition = "50% 72%"
+    banner.style.backgroundPosition = "50% 72%";
     colorBtn[0].addEventListener("click", function(){
         banner.style.backgroundImage =  "url('assets/images/blue.jpg')";      
         bgColor = BLUE;
         bannerContainer.style.backgroundColor = bgColor;
-        // TweenMax.to("#banner", 3, {rotation:360, scale:0.5});
     });
     colorBtn[1].addEventListener("click", function(){
         banner.style.backgroundImage =  "url('assets/images/yellow.jpg')";
         bgColor = YELLOW;
         bannerContainer.style.backgroundColor = bgColor;
+
     });
     colorBtn[2].addEventListener("click", function(){
         banner.style.backgroundImage =  "url('assets/images/red.jpg')";      
@@ -86,27 +99,35 @@ function buttonControls(){
 
 function main(){
     addActive();
+    btnAnimation();
     // defaultFrame();
     // setTimeout(function(){
     //     bannerContainer.style.backgroundColor = YELLOW;
     //     document.getElementById("small-header").innerHTML = "Small Car";
     //     document.getElementById("big-header").innerHTML = "Big Pleasure.";
-        
-    // }, 2000)
+    // }, 2500)
     // setTimeout(function(){
     //     bannerContainer.style.backgroundColor = RED;
-    // }, 4000)
+    //     setTimeout(function(){
+    //         carAnimation();
+    //     },300)
+    //     // TweenLite.to(bannerContainer, .2, {css:{opacity:0}});
+        
+    // }, 4500)
     // setTimeout(function(){
+    //     // TweenLite.to(bannerContainer, .2, {css:{opacity:1}});
+        
     //     banner.style.backgroundImage =  "";
     //     bannerContainer.style.backgroundColor = BLUE;
     //     btnContainer.classList.add("hide")
     //     logoFrame.classList.remove("hide")
     //     mainText.classList.add("hide");
-    // }, 6000)
+        
+    // }, 6500)
     // setTimeout(function(){
     //     banner.classList.remove("full");
     //     banner.classList.add("add-margin")
-    //     buttonControls()}, 8000);
+    //     buttonControls()}, 8500);
 
         buttonControls()
 

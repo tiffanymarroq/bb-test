@@ -27,6 +27,7 @@ img{
     margin: auto;
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
     text-transform: uppercase;    
+    cursor: default;
 }
 
 /* Banner */
