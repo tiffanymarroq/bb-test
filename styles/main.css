@@ -14,6 +14,11 @@ img{
     flex-direction: row;
     align-items: center;
 }
+
+.active{
+    border: 1px solid #fff;
+    
+}
 /* Main Container */
 #banner-container{
     position: relative;
@@ -79,7 +84,6 @@ img{
     background-color: #000;    
     color: #fff;
     font-family: MiniGlobal, Arial, Helvetica, sans-serif;
-    
 }
 #btn-container .flex{
     padding: 0 10px;
@@ -100,7 +104,6 @@ span.color-box{
     width: 20px;
     height: 20px;
     margin-right: 5px;
-    border: 1px solid #fff;
 }
 
 /* Colors */
@@ -121,8 +124,9 @@ span.color-box{
     left: 0;
 }
 
-.logo{
+#logo{
     width: 65px;
+    cursor: pointer;
 }
 #logo-frame{
     height: calc(100% - 14px);
