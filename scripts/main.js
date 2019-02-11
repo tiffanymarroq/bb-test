@@ -21,7 +21,7 @@ function defaultFrame(){
 
 // Animation
 function textAnimation(){
-    TweenLite.fromTo(mainText, .5, {y:-100}, {y: 0,ease:Back.easeIn.config(1.2)});
+    TweenLite.fromTo(mainText, .3, {y:-100}, {y: 0,ease:Back.easeIn.config(1.2)});
     
 }
 function carAnimation(){
@@ -35,18 +35,17 @@ function selectAnimationEnter(){
 
 function btnAnimation(){
     // Button Hover
-    document.getElementById("btn").onmouseover = function(){
-        TweenLite.to(document.getElementById("btn"), .2, {css:{opacity:.8}});
-        }​
-    document.getElementById("btn").onmouseleave = function(){
-        TweenLite.to(document.getElementById("btn"), .2, {css:{opacity:1}});
-        }​
+
     document.getElementById("logo").onmouseover = function(){
         TweenLite.to(document.getElementById("logo"), .2, {css:{scale: 1.1}});
         }​
     document.getElementById("logo").onmouseleave = function(){
         TweenLite.to(document.getElementById("logo"), .2, {css:{scale:1}});
         }​
+        
+        document.getElementById("btn").onmouseleave = function(){
+            TweenLite.to(document.getElementById("btn"), .2, {css:{border: "1px solid #000"}});
+            }​
 
 }
 
@@ -74,7 +73,7 @@ function addActive(){
 function buttonControls(){
     var bgColor = BLUE;
     mainText.classList.add("hide");
-    logoFrame.classList.add("hide");
+    // logoFrame.classList.add("hide");
     colorControls.classList.remove("hide");
     btnContainer.classList.remove("hide")
     banner.style.backgroundImage = "url('assets/images/blue.jpg')";
@@ -84,18 +83,32 @@ function buttonControls(){
         banner.style.backgroundImage =  "url('assets/images/blue.jpg')";      
         bgColor = BLUE;
         bannerContainer.style.backgroundColor = bgColor;
+        
+        document.getElementById("btn").onmouseover = function(){
+            TweenLite.to(document.getElementById("btn"), .2, {css:{border: "1px solid " + bgColor}});
+            }​
     });
     colorBtn[1].addEventListener("click", function(){
         banner.style.backgroundImage =  "url('assets/images/yellow.jpg')";
         bgColor = YELLOW;
         bannerContainer.style.backgroundColor = bgColor;
+        document.getElementById("btn").onmouseover = function(){
+            TweenLite.to(document.getElementById("btn"), .2, {css:{border: "1px solid " + bgColor}});
+            }​
 
     });
     colorBtn[2].addEventListener("click", function(){
         banner.style.backgroundImage =  "url('assets/images/red.jpg')";      
         bgColor = RED;
         bannerContainer.style.backgroundColor = bgColor;
+        
+        document.getElementById("btn").onmouseover = function(){
+            TweenLite.to(document.getElementById("btn"), .2, {css:{border: "1px solid " + bgColor}});
+            }​
     });
+    document.getElementById("btn").onmouseover = function(){
+        TweenLite.to(document.getElementById("btn"), .2, {css:{border: "1px solid " + bgColor}});
+        }​
     bannerContainer.style.backgroundColor = bgColor;
 }
 
@@ -121,18 +134,17 @@ function main(){
         
     }, 4200)
     setTimeout(function(){
-        TweenLite.to(logoFrame, .8, {css:{opacity:1},ease:Sine.easeOut});
+        TweenLite.to(logoFrame, .6, {css:{opacity:1},ease:Expo.easeOut});
         banner.style.backgroundImage =  "";
         bannerContainer.style.backgroundColor = BLUE;
         btnContainer.classList.add("hide")
         logoFrame.classList.remove("hide")
         mainText.classList.add("hide");
         setTimeout(function(){
-        TweenLite.to(logoFrame, 2, {css:{opacity:0},ease:Sine.easeOut});
-            
-        }, 1500)
+            TweenLite.to(logoFrame, 2, {css:{opacity:0}});
+        }, 1300)
         
-    }, 6500)
+    }, 6600)
     setTimeout(function(){
         
         banner.classList.remove("full");
