@@ -20,13 +20,17 @@ function defaultFrame(){
 }
 
 // Animation
+function textAnimation(){
+    TweenLite.fromTo(mainText, .5, {y:-100}, {y: 0,ease:Back.easeIn.config(1.2)});
+    
+}
 function carAnimation(){
     banner.style.backgroundImage = "url('assets/images/sideview-spin.png')";
-    TweenLite.fromTo(banner, 1.5, {backgroundPosition: "-20px 60px",ease:Elastic.easeIn}, {backgroundPosition: "300px 60px"});
+    TweenLite.fromTo(banner, 1.2, {backgroundPosition: "-5px 60px"}, {backgroundPosition: "300px 60px",ease:Back.easeIn.config(1.2)});
 }
 
 function selectAnimationEnter(){
-    TweenLite.fromTo(banner, .8, {backgroundPosition: "50% 400%"}, {backgroundPosition: "50% 72%",ease:Back.easeOut.config(.8)});
+    TweenLite.fromTo(banner, .75, {backgroundPosition: "50% 400%"}, {backgroundPosition: "50% 72%",ease:Back.easeOut.config(1)});
 }
 
 function btnAnimation(){
@@ -100,36 +104,42 @@ function buttonControls(){
 function main(){
     addActive();
     btnAnimation();
-    // defaultFrame();
-    // setTimeout(function(){
-    //     bannerContainer.style.backgroundColor = YELLOW;
-    //     document.getElementById("small-header").innerHTML = "Small Car";
-    //     document.getElementById("big-header").innerHTML = "Big Pleasure.";
-    // }, 2500)
-    // setTimeout(function(){
-    //     bannerContainer.style.backgroundColor = RED;
-    //     setTimeout(function(){
-    //         carAnimation();
-    //     },300)
-    //     // TweenLite.to(bannerContainer, .2, {css:{opacity:0}});
+    textAnimation();
+    defaultFrame();
+    setTimeout(function(){
+        textAnimation();
+        bannerContainer.style.backgroundColor = YELLOW;
+        document.getElementById("small-header").innerHTML = "Small Car";
+        document.getElementById("big-header").innerHTML = "Big Pleasure.";
+    }, 2200)
+    setTimeout(function(){
+        textAnimation();
+        bannerContainer.style.backgroundColor = RED;
+        setTimeout(function(){
+            carAnimation()
+        },1000)
         
-    // }, 4500)
-    // setTimeout(function(){
-    //     // TweenLite.to(bannerContainer, .2, {css:{opacity:1}});
+    }, 4200)
+    setTimeout(function(){
+        TweenLite.to(logoFrame, .8, {css:{opacity:1},ease:Sine.easeOut});
+        banner.style.backgroundImage =  "";
+        bannerContainer.style.backgroundColor = BLUE;
+        btnContainer.classList.add("hide")
+        logoFrame.classList.remove("hide")
+        mainText.classList.add("hide");
+        setTimeout(function(){
+        TweenLite.to(logoFrame, 2, {css:{opacity:0},ease:Sine.easeOut});
+            
+        }, 1500)
         
-    //     banner.style.backgroundImage =  "";
-    //     bannerContainer.style.backgroundColor = BLUE;
-    //     btnContainer.classList.add("hide")
-    //     logoFrame.classList.remove("hide")
-    //     mainText.classList.add("hide");
+    }, 6500)
+    setTimeout(function(){
         
-    // }, 6500)
-    // setTimeout(function(){
-    //     banner.classList.remove("full");
-    //     banner.classList.add("add-margin")
-    //     buttonControls()}, 8500);
+        banner.classList.remove("full");
+        banner.classList.add("add-margin")
+        buttonControls();
+    }, 9500);
 
-        buttonControls()
 
 }
 

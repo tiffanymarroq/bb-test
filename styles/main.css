@@ -130,6 +130,7 @@ span.color-box{
     cursor: pointer;
 }
 #logo-frame{
+    transition: .4s;
     height: calc(100% - 14px);
     width: calc(100% - 14px);
     background-color: #000;
@@ -137,6 +138,7 @@ span.color-box{
     top: 0;
     left: 0;
     margin: 7px;
+    opacity: 0;
 }
 
 #logo-frame img{
