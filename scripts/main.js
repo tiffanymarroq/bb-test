@@ -21,21 +21,20 @@ function defaultFrame(){
 
 // Animation
 function textAnimation(){
-    TweenLite.fromTo(mainText, .3, {y:-100}, {y: 0,ease:Back.easeIn.config(1.2)});
+    TweenLite.fromTo(mainText, .7, {y:-100, opacity: 0}, {y: 0,opacity: 1, ease: Sine.easeOut})
     
 }
 function carAnimation(){
     banner.style.backgroundImage = "url('assets/images/sideview-spin.png')";
-    TweenLite.fromTo(banner, 1.2, {backgroundPosition: "-5px 60px"}, {backgroundPosition: "300px 60px",ease:Back.easeIn.config(1.2)});
+    TweenLite.fromTo(banner, 1, {backgroundPosition: "-5px 55px"}, {backgroundPosition: "300px 55px",ease:Back.easeIn.config(1.2)});
 }
 
 function selectAnimationEnter(){
-    TweenLite.fromTo(banner, .75, {backgroundPosition: "50% 400%"}, {backgroundPosition: "50% 72%",ease:Back.easeOut.config(1)});
+    TweenLite.fromTo(banner, .75, {backgroundPosition: "400px 45px"}, {backgroundPosition: "5px 45px" ,ease:Back.easeOut.config(1.2)});
 }
 
-function btnAnimation(){
+function hoverAnimation(){
     // Button Hover
-
     document.getElementById("logo").onmouseover = function(){
         TweenLite.to(document.getElementById("logo"), .2, {css:{scale: 1.1}});
         }​
@@ -43,10 +42,13 @@ function btnAnimation(){
         TweenLite.to(document.getElementById("logo"), .2, {css:{scale:1}});
         }​
         
-        document.getElementById("btn").onmouseleave = function(){
-            TweenLite.to(document.getElementById("btn"), .2, {css:{border: "1px solid #000"}});
-            }​
-
+    document.getElementById("btn").onmouseover = function(){
+        TweenLite.to(document.getElementById("btn"), .2, {css:{backgroundColor:"#fff", color: "#000"}});
+        }​
+    document.getElementById("btn").onmouseleave = function(){
+        TweenLite.to(document.getElementById("btn"), .2, {css:{backgroundColor:"#000", color: "#fff"}});
+        }
+    
 }
 
 
@@ -79,6 +81,9 @@ function buttonControls(){
     banner.style.backgroundImage = "url('assets/images/blue.jpg')";
     banner.style.backgroundColor = "#000";
     banner.style.backgroundPosition = "50% 72%";
+    document.getElementById("btn").onmouseleave = function(){
+        TweenLite.to(document.getElementById("btn"), .2, {css:{border: "1px solid #000"}});
+        }​
     colorBtn[0].addEventListener("click", function(){
         banner.style.backgroundImage =  "url('assets/images/blue.jpg')";      
         bgColor = BLUE;
@@ -116,7 +121,7 @@ function buttonControls(){
 
 function main(){
     addActive();
-    btnAnimation();
+    hoverAnimation();
     textAnimation();
     defaultFrame();
     setTimeout(function(){

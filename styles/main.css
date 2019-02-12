@@ -2,12 +2,20 @@
     font-family: MiniGlobal;
     src: url('../assets/fonts/mibd.ttf');
   }
+
+  body{
+      font-family: MiniGlobal, Arial;
+  }
 img{
     width: 100%;
     height: auto;
 }
 .hide{
     display: none !important;
+}
+a{
+    text-decoration: none;
+    margin: 0 auto;
 }
 .flex{
     display: flex;
